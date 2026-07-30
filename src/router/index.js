@@ -23,8 +23,13 @@ const routes = [
         path: "/contacts/:id",
         name: "contact.edit",
         component: () => import("@/views/ContactEdit.vue"),
-        props: true 
+        props: true,
     },
 ];
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+});
 
 export default router;

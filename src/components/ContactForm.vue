@@ -70,11 +70,11 @@ export default {
                 .max(50, "E-mail tối đa 50 ký tự."),
             address: yup.string().max(100, "Địa chỉ tối đa 100 ký tự."),
             phone: yup
-                .string()
-                .matches(
-                    /((09|03|07|08|05)+([0-9]{8})\b)/g,
-                    "Số điện thoại không hợp lệ."
-                ),
+            .string()
+            .test('phone-format', 'Số điện thoại không hợp lệ.', 
+                (value) => !value || /((09|03|07|08|05)([0-9]{8})\b)/.test(value)
+            ),
+
         });
         
         return {
@@ -87,7 +87,7 @@ export default {
             this.$emit("submit:contact", this.contactLocal);
         },
         deleteContact() {
-            this.$emit("delete:contact", this.contactLocal.id);
+            this.$emit("delete:contact", this.contactLocal._id);
         },
         Cancel() {
             const reply = window.confirm('Bạn có thay đổi chưa lưu! Bạn có muốn thoát không?')

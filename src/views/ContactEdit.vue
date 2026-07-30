@@ -50,8 +50,10 @@ export default {
                 this.$router.push({ name: "contactbook" });
             } catch (error) {
                 console.log(error);
+                this.message = "Có lỗi xảy ra khi cập nhật liên hệ.";
             }
         },
+
         async deleteContact() {
             if (confirm("Bạn muốn xóa Liên hệ này?")) {
                 try {

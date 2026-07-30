@@ -1,0 +1,22 @@
+.error-feedback {
+  color: #dc3545;
+  font-size: 85%;
+  margin-top: 0.25rem;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-weight: 500;
+}
+
+.btn-primary {
+  margin-right: 8px;
+}
+
+.form-check-input {
+  margin-top: 0.3rem;
+}

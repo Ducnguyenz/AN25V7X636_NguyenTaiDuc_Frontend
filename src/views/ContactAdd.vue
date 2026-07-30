@@ -38,8 +38,10 @@ export default {
                 this.$router.push({ name: "contactbook" });
             } catch (error) {
                 console.log(error);
+                this.message = "Có lỗi xảy ra khi thêm liên hệ.";
             }
         },
+
     },
 };
 </script>
